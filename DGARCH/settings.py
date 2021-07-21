@@ -98,6 +98,19 @@ WSGI_APPLICATION = 'DGARCH.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd43fdc7fcpt817',
+        'USER': 'czbqezclfbhqhb',
+        'PASSWORD': 'fb8962057b9e7f64b39faef9cd1735a8c4a18854d9d725ff5cd130a90e0b486d',
+        'HOST': 'ec2-52-6-211-59.compute-1.amazonaws.com',
+        'PORT': '5432'
+    }
+}
+
+
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'DG',
         'USER': 'postgres',
         'PASSWORD': 'Deepak@02',
@@ -105,7 +118,20 @@ DATABASES = {
         'PORT': '5433'
     }
 }
+'''
 
+
+
+
+'''
+
+DATABASES = {
+    'default':{
+        'ENGIN':'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db_sqlite3'),
+    }
+}
+'''
 
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
