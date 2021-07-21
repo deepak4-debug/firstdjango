@@ -1,0 +1,23 @@
+
+h1{
+margin-bottom: 50px !important;
+}
+
+.play-btn{
+    width: 100px;
+    position: relative;
+    top: -200px;
+    cursor: pointer;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.col-md-4:hover .play-btn{
+    opacity: 1;
+}
+
+.modal-content{
+    background: transparent !important;
+    border: none !important;
+
+}
