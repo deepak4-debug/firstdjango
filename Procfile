@@ -1,2 +1,2 @@
 
-web: gunicorn DGARCH.wsgi --log-file-
+web: gunicorn DGARCH.wsgi 
