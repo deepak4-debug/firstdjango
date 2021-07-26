@@ -14,7 +14,7 @@ def login(request):
            auth.login(request, user)
            return redirect("/")
         else:
-            messages.info(request, 'Invalid User, Please Sing Up below')
+            messages.info(request, 'Invalid User, Please Sing Up above')
             return redirect('login')
                
     else:

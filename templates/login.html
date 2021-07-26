@@ -1,88 +1,100 @@
-
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block content %}
+  
 
+  
 <!DOCTYPE html>
-<html lang="zxx">
-
+<html lang="en">
 <head>
-    {% block title %}
-		Login Form
-	{% endblock title %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' %}" crossorigin="anonymous">
+<style type="text/css">
+  .login{
+    padding-top:100px;
+    background-color: rgb(191, 191, 230);
+    border-radius: 25% 10%;
+  }
+  form{
+   padding-top:20px;
+   padding-bottom: 20px; 
+    
+  }
+  @media only screen and (min-width: 600px)  {
+.form-check{
+  padding-left: 80px;
+}
+ button{
+   margin-left: 80px;
+   border-radius: 30px;;
+ } 
+ .sgup{
+  padding-left: 80px;
+ }
+ .message{
+  padding-left: 80px
+ }
+}
 
-
-	<!-- Meta tag Keywords -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="UTF-8" />
-	<meta name="keywords"
-		content="Working Signin form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-	<!-- //Meta tag Keywords -->
-	<link href="% static '//fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap' %}" rel="stylesheet">
-	<!--/Style-CSS -->
-	<link rel="stylesheet" href="{% static 'css/log.css' %}" type="text/css" media="all" />
-	<!--//Style-CSS -->
+@media only screen and (max-width: 600px)  {
+  .form-check{
+    padding-left: 45px;
+ }
+ button{
+  margin-left: 45px;
+  border-radius: 30px;;
+ } 
+ .sgup{
+  padding-left: 45px
+ }
+ .message{
+  padding-left: 45px
+ }
+}
+</style>
 </head>
+<body>
+  <div class="row login">
+    <div class="col-md-6">
+      <img src="{% static 'images/loginimage.png' %}" class="img-fluid" alt="Responsive image">
+    </div>
 
-<body style="background-color: aqua;"> 
-<br><br><br>
-	 <!-- form section start -->
-	 <section class="w3l-workinghny-form">
-        <!-- /form -->
-        <div class="workinghny-form-grid">
-            <div class="wrapper">
-                <div class="logo">
-                    <h1><a class="brand-logo" href="index.html"> Sign In</a></h1>
-                    <!-- if logo is image enable this   
-                        <a class="brand-logo" href="#index.html">
-                            <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-                        </a> -->
-                </div>
-                <div class="workinghny-block-grid">
-                    <div class="workinghny-left-img align-end">
-                        <img src="{% static 'images/sl.png' %}" class="img-responsive" alt="img" />
-                    </div>
-                    <div class="form-right-inf">
-						
-                        <div class="login-form-content">
-                            <form action="login" class="signin-form" method="post">
-                                {% csrf_token %}
-								<div class="one-frm">
+    <div class="col-md-6">
+  <form action="login" class="signin-form" method="post">
+    {% csrf_token %}
+  <div class="form-group">
+    <label for="username"><i class="fal fa-user"></i> User Name</label>
+    <input name="username" type="text" class="form-control icon" id="exampleInputEmail1"  placeholder="User Name" required="">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1"><i class="far fa-key"></i> Password</label>
+    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required="">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Remember me</label>
+  </div>
+  <button type="submit" class="btn btn-dark">Sign In</button>
+  <p class="sgup">Don't have an account? <a href="register">Sign Up</a></p>
+  <div class="message">
+    {% for message in messages %}
+    <h1 style="color: red; font-style:italic; font-size:medium">**{{message}}</h1>
+    {% endfor %}
+</div>
+</form>
+</div>
+</div>
 
-									<label>Enter Username</label>
-									<input type="text" name="username"  placeholder="Username" required="">
-								</div>
-								<div class="one-frm">
-									<label>Enter Password</label>
-									<input type="password" name="password"  placeholder="Password" required="">
-								</div>
-                                <div>
-                                    {% for message in messages %}
-                                    <h1 style="color: red; font-style:italic; font-size:medium">**{{message}}</h1>
-                                    {% endfor %}
-                                </div><br>
-
-                                <label class="check-remaind">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                    <p class="remember">Remember Me</p>
-
-                                </label>
-                                <button class="btn btn-style mt-3">Sign In </button>
-                                <p class="already">Don't have an account? <a href="register">Sign Up</a></p>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- //form -->
-    </section>
-    <!-- //form section start -->
+<script src="{% static 'https://code.jquery.com/jquery-3.2.1.slim.min.js' %}" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' %}" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' %}" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
-
 </html>
+
 {% endblock content %}

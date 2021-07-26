@@ -118,8 +118,8 @@ DATABASES = {
         'PORT': '5433'
     }
 }
-'''
 
+'''
 
 
 
@@ -192,8 +192,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'bhattaraid313@gmail.com'
-EMAIL_HOST_PASSWORD = 'Deepak@02'
+EMAIL_HOST_PASSWORD = 'fjsoziibiaamlkjf'
 EMAIL_USE_TLS = 'True'
+#SERVER_EMAIL = 'bhattaraid313@gmail.com'
 #EMAIL_USE_SSL = 'False'
 
 
