@@ -4,15 +4,9 @@ from django.db.models.fields.files import ImageField
 
 # Create your models here.
 class Carsoul(models.Model):
-    height = models.IntegerField(default=954)
-    width = models.IntegerField(default=1982)
-    Carsoul_image = models.ImageField(upload_to='Cas',height_field='height', width_field='width')
+    Carsoul_image_name = models.CharField(max_length=20, blank=True, null=True)
+    Carsoul_image = models.ImageField(upload_to='Cas')
     
-    def __str__(self):
-        return self.Carsoul_image
-    class Meta:
-        # Add verbose name
-        verbose_name = 'Carsoul Image'
 
 class Car_des(models.Model):
     Car_description = models.TextField(max_length=400)
