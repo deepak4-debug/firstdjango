@@ -1,0 +1,44 @@
+ <!--   
+    {% block body %}
+  
+  <div>
+      <strong>Menu:</strong>
+      <ul>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
+        <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+        {% else %}
+        <li><a href="{% url 'account_login' %}">Sign In</a></li>
+        <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+        {% endif %}
+      </ul>
+    </div>
+<br><br><br>
+    <div class="container ">
+    <div class="row justify-content-center mt-5 mb-5 py-4">
+      <div class="col-md-3 mt-5">
+        <button class="btn btn-light"> <a href="{% url 'home' %}">Back to Home</a></button>
+      </div>
+      <div class="col-md-9 shadow p-3 mb-5 bg-white rounded">
+
+        {% if messages %}
+        <div>
+            {% for message in messages %}
+            <p style="color: blue;">{{message}}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+        {% endblock %}
+        {% block extra_body %}
+        {% endblock %}
+      </div>
+    </div>
+    </div>
+
+-->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>

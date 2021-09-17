@@ -34,7 +34,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '#cdu%e#e&3_4rdg0(w$23lr&!9&_tcvan2trooka%&5e+t2=#&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -49,10 +49,45 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    
     'mainsite.apps.MainsiteConfig',
-    'accounts.apps.AccountsConfig',
+    
+     'crispy_forms',
+    
+    
+    #for allauth
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    
     
 ]
+
+
+
+#For django_allauth
+AUTHENTICATION_BACKENDS = [
+    
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+   
+]
+
+SITE_ID = 1
+
+#ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = False
+LOGIN_REDIRECT_URL ='home'
+
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED=True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -106,8 +141,8 @@ DATABASES = {
         'PORT': '5432'
     }
 }
-'''
 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -160,7 +195,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Thimphu'
 
 USE_I18N = True
 
@@ -184,7 +219,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'asserts')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'DGARCH.storage.WhiteNoiseStaticFilesStorage'
+#STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+
+
+
+
+#For Crispy forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Email setting 
 #https://myaccount.google.com/lesssecureapps
@@ -197,5 +239,8 @@ EMAIL_USE_TLS = 'True'
 #SERVER_EMAIL = 'bhattaraid313@gmail.com'
 #EMAIL_USE_SSL = 'False'
 
+ADMINS = [
+    ('Deepak', 'bhattaraid313@gmail.com'),
+]
 
 django_heroku.settings(locals())

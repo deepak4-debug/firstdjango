@@ -1,0 +1,61 @@
+{% extends 'mainsite/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<div class="background">
+    {% for ab in abu %}
+<div class="container aboutus-con">
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <div class="row">
+        <h1 class="text-center" style="color:green; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Know About Us</h1>
+        <p style="text-align: justify; font-size:medium; color:black">{{ab.AboutUs_description}}</p>
+        <hr>
+        <div class="col-md-6">
+           <img src="{{ab.AboutUs_image.url}}" alt="No_image">
+           
+        </div>
+        <div class="col-md-6 c1">
+          <p style="text-align: justify; font-size:large;  color:black">{{ab.Sub_Header_description|linebreaks}}</p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+</div>
+
+{% for wh in whu %}
+<div class="container aboutus-con2">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="" alt="">
+        </div>
+        <div class="col-md-8">
+            <h3>What we do?</h3>
+            <p style="text-align: justify; font-size:large;">{{wh.What_we_do}}</p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+<div class="container con-why-us">
+    <h3 class="text-center" style="color: green;">Why choose us?</h3>
+    <hr>
+    <div class="row">
+        {% for li in lis %}
+        <div class="col-md-3 col-choose-us text-center">
+             <div>
+                 <img src="" alt="">
+             </div>
+             <div>
+                 <p style="color: blue;">{{li.Why_Choose_us_list}}</p>
+             </div>
+        </div>
+        <div class="col-md-1"></div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
+    

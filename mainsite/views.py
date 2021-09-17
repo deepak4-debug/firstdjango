@@ -9,15 +9,11 @@ def index(request):
     cars = Carsoul.objects.all()
     des = Car_des.objects.all()
     ser = Services.objects.all()
-    abu = aboutUs.objects.all()
-    whu = whyUs.objects.all()
-    lis = list.objects.all()
-    pro = projects.objects.all()
     vid = videos.objects.all()
-    tem = team.objects.all()
-    index1 = TemplateResponse(request, 'index.html', {'cars': cars,'des': des, 'ser':ser, 'abu':abu, 'whu':whu, 'lis':lis, 'pro':pro, 'vid':vid, 'tem':tem})
+    index1 = TemplateResponse(request, 'mainsite/index.html', {'cars': cars,'des': des, 'ser':ser,'vid':vid,})
     return index1
 
+    
 
 def contact(request):
     if request.method == "POST":
@@ -33,23 +29,44 @@ def contact(request):
             ['bhattaraid313@gmail.com'], # to email
         )
         
-        contact1=TemplateResponse(request, 'contact.html', {'Contact_name':Contact_name })
+        contact1=TemplateResponse(request, 'mainsite/index.html', {'Contact_name':Contact_name })
         return contact1
         #return render(request, 'contact.html', {'Contact_name':Contact_name })
      
     else:
-        contact2=TemplateResponse(request, 'contact.html', {})
+        contact2=TemplateResponse(request, 'mainsite/index.html', {})
         return contact2
         #return render(request, 'contact.html', {})
-     
+
      
 def service_page1(request):
-    service=TemplateResponse(request, 'service_page1.html', {})
+    service=TemplateResponse(request, 'mainsite/service_page1.html', {})
     return service
     #return render(request, 'service_page1.html', {})
 
 def about_Us(request):
-    about = TemplateResponse(request, 'aboutUs.html', {})
+    abu = aboutUs.objects.all()
+    whu = whyUs.objects.all()
+    lis = list.objects.all()
+    context = {
+        'abu': abu,
+        'whu':whu,
+        'lis':lis,
+    }
+    about = TemplateResponse(request, 'mainsite/aboutUs.html', context)
     return about
     #return render(request, 'aboutUs.html', {})
 
+def ImageGallery(request):
+    pro = projects.objects.all()
+    context = {
+        'pro':pro
+    }
+    return render(request,'mainsite/img_gallery.html', context)
+
+def Team(request):
+    tem = team.objects.all()
+    context = {
+      'tem':tem  
+    }
+    return render(request, 'mainsite/team.html', context)

@@ -1,0 +1,5 @@
+html { scroll-behavior: smooth;}
+
+ #plans .col-md-4:hover img{
+    opacity: 1;
+}

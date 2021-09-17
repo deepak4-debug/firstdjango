@@ -1,0 +1,394 @@
+{% load static %}
+<!doctype html>
+<!--[if IE 7 ]>    <html lang="en-gb" class="isie ie7 oldie no-js"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en-gb" class="isie ie8 oldie no-js"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en-gb" class="isie ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en-gb" class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!--[if lt IE 9]> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+<title>  
+{% block title %} D.G ARCH {% endblock title %}
+</title>
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="author" content="D.G ARCH">
+<!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<!--[if lte IE 8]>
+		<script type="text/javascript" src="https://explorercanvas.googlecode.com/svn/trunk/excanvas.js"></script>
+	<![endif]-->
+<script src="https://kit.fontawesome.com/aa61b361b8.js" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" type="text/css" href=" {% static 'css/isotope.css' %}" media="screen" />
+<link rel="stylesheet" href=" {% static 'js/fancybox/jquery.fancybox.css' %}" type="text/css" media="screen" />
+<link href="{% static 'css/animate.css' %}" rel="stylesheet" media="screen">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+<!-- Owl Carousel Assets -->
+<link href="{% static 'js/owl-carousel/owl.carousel.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+<!-- Font Awesome -->
+<link href="{% static 'fonts/css/font-awesome.min.css' %}" rel="stylesheet">
+ <!-- CSS only
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+ -->
+ 
+</head>
+
+<style>
+
+  .logo{
+    margin-top:20px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .logo{
+      font-size:small;
+    }
+  }
+
+
+  @media only screen and (max-width: 600px) {
+    .carsoul-text{
+      font-size:xx-small;
+    }
+  }
+
+  .carsoul-text{
+    height:60px;
+    border-radius: 30px;
+    background-color: skyblue;
+  }
+
+  .carsoul-text:hover{
+    background-color: yellow;
+  }
+
+  .team{
+    margin-top: 80px;
+    margin-bottom: 30px;
+    background-color: skyblue;
+    border-radius: 30px;
+  }
+
+  .aboutus-con{
+    margin-top: 100px;
+    margin-bottom: 30px;
+    z-index: 1;
+    backdrop-filter: blur(100px);
+  
+  }
+ .aboutus-con2{
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  background-color: skyblue;
+  border-radius: 30px;
+  margin-bottom:60px;
+  
+  
+}
+
+.circle1{
+  width: 70px;
+  height:70px;
+  border-radius: 50%;
+  background: linear-gradient(#18451d, #23a2f6);
+  position: absolute;
+  left: 80%;
+  top:50%; 
+}
+
+.circle2{
+  width: 50px;
+  height:50px;
+  border-radius: 50%;
+  background: linear-gradient(#ff512f, #f09819);
+  position: absolute;
+  left: 75%;
+  top:75%; 
+}
+
+.background{
+  backdrop-filter: blur(100px); 
+}
+
+
+.con-why-us{
+  margin-top: 15px;
+  margin-bottom: 50px;
+
+}
+
+.col-choose-us{
+  border: 0.4px solid blue;
+  border-radius: 30px;
+  background-color: rgb(240, 243, 243) ;
+  margin-top: 15px;
+  animation: myAnim 2s ease-in 1s 1 alternate backwards;
+}
+
+
+@keyframes myAnim {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+
+
+
+.project-status {
+  padding:10px;
+  border-radius: 20px;
+  --initialTextColor: #FFF;
+  --slideTextColor: #272838;
+
+  --initialBgColor: orange;
+  --slideBgColor: #FFF;
+
+  color: var(--initialTextColor);
+
+  background-image: linear-gradient(90deg,
+      var(--initialBgColor) 0%,
+      var(--initialBgColor) 50%,
+      var(--slideBgColor) 50%,
+      var(--slideBgColor) 100%);
+  background-size: 200%;
+  transition: background-position .3s cubic-bezier(.47, .1, 1, .63),
+    color .2s linear;
+  transition-delay: 0.0s, 0.15s;
+}
+
+.project-status:hover {
+  color: var(--slideTextColor);
+  cursor: pointer;
+  background-position: -100% 100%;
+}
+
+
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #f1f1f1f1;
+  margin-top:50px;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: cornflowerblue;}
+
+
+
+
+
+
+</style>
+
+
+
+<body>
+<header class="header" style="background-color: rgb(43, 41, 41);">
+  <div class="container">
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <a href="{% url 'home' %}" class="navbar-brand scroll-top logo  animated bounceInLeft"><b><i><strong>D.G Archi</strong></i></b></a></div>
+      <!--/.navbar-header-->
+      <div id="main-nav" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav" id="mainNav">
+          <li class="" id="firstLink"><a href="{% url 'home' %}" class="scroll-link">Home</a></li>
+          <li><a href="{% url 'services' %}#services" class="scroll-link">Services</a></li>
+          <li><a href="{% url 'image-gallery' %}" class="scroll-link">Gallery</a></li>
+          <li><a href="{% url 'about_Us' %}" class="scroll-link">About Us</a></li>
+          <li><a href="{% url 'team' %}" class="scroll-link">Team</a></li>
+          <li><a href="{% url 'contact' %}#contactus" class="scroll-link">Contact Us</a></li>
+         
+          
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'account_logout' %}" class="scroll-link">Logout</a></li>
+          <li><a href="{% url 'account_logout' %}" class="scroll-link" style="color: blue;"><i class="fas fa-user-circle"> Hello, {{user.username}}</i></a></li>
+          {% else %}
+          <li><a href="{% url 'account_signup' %}" class="scroll-link">Register</a></li>
+          <li><a href="{% url 'account_login' %}" class="scroll-link">Login</a></li>
+          {% endif %}
+        </ul>
+      </div>
+      <!--/.navbar-collapse--> 
+    </nav>
+    <!--/.navbar--> 
+  </div>
+  <!--/.container--> 
+</header>
+<!--/.header-->
+{% block content %}
+
+
+
+{% endblock %}
+
+<footer>
+    <div class="container">
+            <div class="row">
+  
+                <div class="col-md-4">
+                  <div class="col">
+                       <h4>Contact us</h4>
+                       <ul>
+                            <li>1th Avenue, Thimphu - Bhutan</li>
+                            <li>Phone: +975 342 2345 345 | Fax: +975 724 2342 343 </li>
+                            <li>Email: <a href="mailto:info@example.com" title="Email Us">info@example.com</a></li>
+                            <li>Skype: <a href="skype:my.test?call" title="Skype us">my-company</a></li>
+                        </ul>
+                     </div>
+                </div>
+                
+                <div class="col-md-4">
+                  <div class="col col-social-icons">
+                        <h4>Follow us on</h4>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-skype"></i></a>   
+                    </div>
+                </div>
+    
+                 <div class="col-md-4">
+                   <div class="col">
+                        <h4>Important Links</h4>
+                        <ul>
+                          <li> <a href="{% url 'home' %}">Home</a></li>
+                          <li><a href="#">Projects</a></li>
+                          <li><a href="#">Building Design</a></li>
+                          <li><a href="#">Building Drawing</a></li>
+                        </ul>   
+                    </div>
+                </div>
+  
+            </div>   
+        </div>
+    </footer>
+  <!--/.page-section-->
+  
+  <section class="copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center"> Copyright 2021 | All Rights Reserved<a href="{% url 'home' %}"><strong>--D.G Archi-Techs' Studio</strong></a><br>
+        <a href=""><span>Privacy Policy</span></a> 
+        </div>
+      </div>
+      <!-- / .row --> 
+    </div>
+  </section>
+  <a href="#top" class="topHome"><i class="fa fa-chevron-up fa-2x"></i></a> 
+
+
+  <script>
+
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+
+
+ </script>
+
+  
+  
+  <!--[if lte IE 8]><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><![endif]--> 
+  <script src="{% static 'js/modernizr-latest.js' %}"></script> 
+  <script src="{% static 'js/jquery-1.8.2.min.js' %}" type="text/javascript"></script> 
+  <script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript"></script> 
+  <script src="{% static 'js/jquery.isotope.min.js' %}" type="text/javascript"></script> 
+  <script src="{% static 'js/fancybox/jquery.fancybox.pack.js' %}" type="text/javascript"></script> 
+  <script src="{% static 'js/jquery.nav.js' %}" type="text/javascript"></script> 
+  <script src="{% static 'js/jquery.fittext.js' %}"></script> 
+  <script src="{% static 'js/waypoints.js' %}"></script> 
+  <script src="{% static 'js/custom.js' %}" type="text/javascript"></script> 
+  <script src="{% static 'js/owl-carousel/owl.carousel.js' %}"></script>
+  
+   <!-- JavaScript Bundle with Popper 
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+   -->
+  </body>
+  </html>

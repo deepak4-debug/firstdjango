@@ -38,26 +38,25 @@ class Services(models.Model):
     
 class aboutUs(models.Model):
     AboutUs_description = TextField(max_length=200)
-    Sub_header = CharField(max_length=25)
     Sub_Header_description = TextField()
     AboutUs_image = ImageField(upload_to='abu')
     
     def __str__(self):
-            return self.Sub_header
+            return self.AboutUs_description
     class Meta:
         # Add verbose name
         verbose_name = 'About U'
     
 class whyUs(models.Model):
     What_we_do = TextField()
-    Why_Choose_us_header = TextField()
-    Why_Choose_us_image = ImageField(upload_to='abu')
+   
+    
     
     def __str__(self):
-            return self.Why_Choose_us_header
+            return self. What_we_do
     class Meta:
         # Add verbose name
-        verbose_name = 'Why Choose U'
+        verbose_name = 'What we do'
     
 class list(models.Model):
     Why_Choose_us_list = TextField(max_length=200)

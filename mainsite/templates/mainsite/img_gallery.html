@@ -1,0 +1,85 @@
+{% extends 'mainsite/base.html' %}
+{% load static %}
+
+{% block content %}
+    
+
+<section id="work" class="page-section page" style="margin-top: 70px; margin-bottom:30px;">
+    <div class="container text-center">
+      <div class="heading">
+        <h2 style="color:rgb(8, 156, 214); font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Projects and Images Gallery</h2>
+        {% for pr in pro %}
+        <p style="color:black">{{pr.Project_Heading}}</p>
+        {% endfor %}
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div id="portfolio">
+            <ul class="filters list-inline">
+              <li> <a class="active" data-filter="*" href="#">All</a> </li>
+              <li> <a data-filter=".photography" href="#">New Projects</a> </li>
+              <li> <a data-filter=".branding" href="#">Green Building</a> </li>
+              <li> <a data-filter=".web" href="#">Modern Design</a> </li>
+            </ul>
+            <hr>
+            <ul class="items list-unstyled clearfix animated fadeInRight showing" data-animation="fadeInRight" style="position: relative; height: 438px;">
+              <!--
+              <li class="item {{pr.category_of_projects}}" style="position: absolute; left: 0px; top: 0px;"> 
+                                                
+                  <figure class="effect-bubba">
+                          <img src="{{pr.Project_Image.url}}" alt="img02"/>
+                          <figcaption>
+                              <h2>Trends</h2> 
+                              <a href="{{pr.Project_Image.url}}" class="fancybox">View more</a> 
+                          </figcaption>			
+                      </figure> 
+                      
+                    </li>
+                   -->
+         {% for pr in pro %}
+               {% if pr.category_of_projects == 'PHG' %}
+              <li class="item photography" style="position: absolute; left: 292px; top: 0px;"> 
+              <figure class="effect-bubba">
+                          <img src="{{pr.Project_Image.url}}" alt="img02" style="height: 100%; width:100%; object-fit: contain;" />
+                          <figcaption>
+                              <h2>Trends</h2> 
+                              <a href="{{pr.Project_Image.url}}" class="fancybox">View more</a> 
+                          </figcaption>			
+                      </figure> 
+                </li>
+          
+          {% elif pr.category_of_projects == 'BRN' %}
+              <li class="item branding" style="position: absolute; left: 585px; top: 0px;"> 
+              <figure class="effect-bubba">
+                          <img src="{{pr.Project_Image.url}}" alt="img02"/>
+                          <figcaption>
+                              <h2>Trends</h2> 
+                              <a href="{{pr.Project_Image.url}}" class="fancybox">View more</a> 
+                          </figcaption>			
+                      </figure>  
+                </li>
+           
+                
+          {% elif pr.category_of_projects == 'WB' %}
+              <li class="item web" style="position: absolute; left: 292px; top: 219px;"> 
+              <figure class="effect-bubba">
+                          <img src="{{pr.Project_Image.url}}" alt="img02"/>
+                          <figcaption>
+                              <h2>Trends</h2> 
+                              <a href="{{pr.Project_Image.url}}" class="fancybox">View more</a> 
+                          </figcaption>			
+                      </figure> 
+                </li>
+          {% endif %}
+          {% endfor %} 
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+  
+
+{% endblock content %}
+    
